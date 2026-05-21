@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register/register_step1_screen.dart';
+import 'user_login_screen.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -55,8 +56,9 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 14),
                       _buildEmailButton(context),
 
-                      const Spacer(flex: 2),
-
+                      const Spacer(flex: 1),
+                      _buildSecondaryButton(context),
+                      const SizedBox(height: 14),
                       // ── FOOTER ──
                       _buildFooter(context),
 
@@ -232,7 +234,8 @@ class LoginScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Image.asset(
         'assets/images/LogotipoSinfondo.png',
-        height: 220,
+        height: 120,
+        width: 300,
         fit: BoxFit.contain,
       ),
     );
@@ -421,7 +424,36 @@ Widget _buildEmailButton(BuildContext context) {
     ),
   );
 }
-
+Widget _buildSecondaryButton(BuildContext context) {
+  return SizedBox(
+    width: double.infinity,
+    height: 54,
+    child: OutlinedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const EmailLoginScreen()),
+        );
+        // TODO: Navegar a login
+      },
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(color: Color(0xFF8B5CF6), width: 1.5),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+      ),
+      child: const Text(
+        'Iniciar sesión',
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: Color(0xFF7C5CBF),
+          letterSpacing: 0.3,
+        ),
+      ),
+    ),
+  );
+}
 // ─────────────────────────────────────────
 // FOOTER
 // ─────────────────────────────────────────
@@ -498,7 +530,7 @@ class _SocialButton extends StatelessWidget {
               : null,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.8),
+              color: const Color(0xFF6D28D9).withValues(alpha: 0.2),
               blurRadius: 10,
               offset: const Offset(0, 3),
             ),

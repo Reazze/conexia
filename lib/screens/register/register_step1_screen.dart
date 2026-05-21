@@ -110,15 +110,14 @@ class _RegisterStep1ScreenState extends State<RegisterStep1Screen> {
                           _buildStepIndicator(currentStep: 1),
                           const SizedBox(height: 24),
                           _buildSectionTitle(
-                            icon: '👤',
                             title: 'Tus datos personales',
                             subtitle: 'Cuéntanos un poco sobre ti',
                           ),
-                          const SizedBox(height: 24),
+                          const SizedBox(height: 34),
 
                           // ── FOTO DE PERFIL ──
                           _buildAvatarPicker(),
-                          const SizedBox(height: 26),
+                          const SizedBox(height: 36),
 
                           // ── NOMBRE ──
                           _buildTextField(
@@ -294,10 +293,9 @@ class _RegisterStep1ScreenState extends State<RegisterStep1Screen> {
   // ─────────────────────────────────────────
   // SECTION TITLE
   // ─────────────────────────────────────────
-  Widget _buildSectionTitle({required String icon, required String title, required String subtitle}) {
+  Widget _buildSectionTitle({ required String title, required String subtitle}) {
     return Column(
       children: [
-        Text(icon, style: const TextStyle(fontSize: 36)),
         const SizedBox(height: 8),
         Text(title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF3B1F8C))),
         const SizedBox(height: 4),
