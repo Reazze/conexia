@@ -1,5 +1,7 @@
+import 'package:conexia/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:conexia/core/theme/app_colors.dart';
 
 import '../providers/welcome_provider.dart';
 
@@ -17,7 +19,7 @@ class TermsCheckboxWidget extends ConsumerWidget {
         Checkbox(
           value: acceptTerms,
 
-          activeColor: const Color(0xFF8B5CF6),
+          activeColor: AppColors.primary,
 
           onChanged: (value) {
             ref
@@ -29,17 +31,14 @@ class TermsCheckboxWidget extends ConsumerWidget {
         Expanded(
           child: RichText(
             text: const TextSpan(
-              style: TextStyle(
-                color: Color(0xFF666666),
-                fontSize: 13,
-              ),
+              style: AppTextStyles.footer,
               children: [
                 TextSpan(text: 'Acepto los '),
 
                 TextSpan(
                   text: 'términos y condiciones',
                   style: TextStyle(
-                    color: Color(0xFF8B5CF6),
+                    color: AppColors.primary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

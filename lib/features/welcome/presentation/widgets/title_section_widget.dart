@@ -1,3 +1,4 @@
+import 'package:conexia/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class TitleSectionWidget extends StatelessWidget {
@@ -13,27 +14,27 @@ class TitleSectionWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF1A1A2E),
+              color: AppColors.textPrimary,
             ),
             children: [
               TextSpan(text: '¡Bienvenido a '),
               TextSpan(
                 text: 'CONEXIA',
                 style: TextStyle(
-                  color: Color(0xFF7C5CBF),
+                  color: AppColors.primary,
                 ),
               ),
               TextSpan(text: '!'),
             ],
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height:09),
         const Text(
           'Conéctate con personas increíbles,\ncomparte tus opiniones y \ngana recompensas reales.',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 15,
-            color: Color(0xFF666666),
+            color: AppColors.textSecondary,
             height: 1.6,
           ),
         ),

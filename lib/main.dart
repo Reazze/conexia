@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/theme/app_theme.dart';
+
+
+import 'features/welcome/presentation/pages/welcome_page.dart';
 
 void main() {
-  runApp(const ConexiaApp());
+  runApp(
+    const ProviderScope(
+      child: ConexiaApp(),
+    ),
+  );
 }
 
 class ConexiaApp extends StatelessWidget {
@@ -13,15 +21,10 @@ class ConexiaApp extends StatelessWidget {
     return MaterialApp(
       title: 'Conexia',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        fontFamily: 'Poppins', // Agrega Poppins en pubspec.yaml
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF8B5CF6),
-          brightness: Brightness.light,
-        ),
-      ),
-      home: const WelcomeScreen(),
+
+      theme: AppTheme.lightTheme,
+
+      home: const WelcomePage(),
     );
   }
 }
